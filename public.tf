@@ -27,3 +27,14 @@ resource "aws_subnet" "main_subnet_public_1b" {
     }
   )
 }
+
+resource "aws_route_table_association" "main_rtb_assoc_1a" {
+  subnet_id      = aws_subnet.main_subnet_public_1a.id
+  route_table_id = aws_route_table.main_public_route_table.id
+}
+
+resource "aws_route_table_association" "main_rtb_assoc_1b" {
+  subnet_id      = aws_subnet.main_subnet_public_1b.id
+  route_table_id = aws_route_table.main_public_route_table.id
+}
+
